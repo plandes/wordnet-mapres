@@ -51,8 +51,7 @@
         <log4j.version>2.7</log4j.version>
         <project.classname>com.zensols.nlp.wnmap.HelloWorld</project.classname>
         <project.site.readme.dir>${basedir}/src/site/markdown</project.site.readme.dir>
-        <project.wndat.dir>${project.build.directory}/wn/dat</project.wndat.dir>
-        <project.wndat.ext.dir>${project.wndat.dir}/net/sf/extjwnl/data/wordnet/wn31</project.wndat.ext.dir>
+        <project.wndat.dir>${project.build.directory}/wn/ext</project.wndat.dir>
     </properties>
 
     <dependencies>
@@ -118,7 +117,6 @@
                                     <artifactId>extjwnl-data-wn31</artifactId>
                                     <version>1.2</version>
                                     <outputDirectory>${project.wndat.dir}</outputDirectory>
-                                    <destFileName>optional-new-name.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>

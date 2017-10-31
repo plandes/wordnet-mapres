@@ -13,10 +13,11 @@ DICT2MAP=	$(WNDIST_EXT)/extjwnl-$(WNDIST_VER)/bin/dict2map
 
 all:	tmp
 
-tmp:	$(WNDAT_EXT) $(WNDIST_EXT)
+tmp:	$(WNDAT_DIR)
+
+$(WNDAT_DIR):	$(WNDAT_EXT) $(WNDIST_EXT)
 	mkdir -p $(WNDAT_DIR)
-	/bin/bash $(DICT2MAP) $(WNDAT_SRC) $(WNDAT_DIR)
-	ls $(WNDAT_DIR)
+	/bin/bash $(DICT2MAP) src/data-resources/build_res_properties.xml $(WNDAT_DIR)
 
 $(WNDAT_EXT):
 	mvn -Pwordnet-data-deps dependency:unpack
