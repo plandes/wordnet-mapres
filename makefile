@@ -1,17 +1,33 @@
 # build file for Wordnet MapDictionary
 
 TARG=		target
-WNDIST_DIR=	$(TARG)/wndist
+WNDIST_VER=	1.9.3
+WNDIR=		$(TARG)/wn
+WNDIST_DIR=	$(WNDIR)/dist
 WNDIST_ARCH=	$(WNDIST_DIR)/wnarch.zip
+WNDIST_EXT=	$(WNDIST_DIR)/dist
+WNDAT_EXT=	$(WNDIR)/ext
+WNDAT_SRC=	$(WNDAT_EXT)/net/sf/extjwnl/data/wordnet/wn31
+WNDAT_DIR=	$(WNDIR)/dat
+DICT2MAP=	$(WNDIST_EXT)/extjwnl-$(WNDIST_VER)/bin/dict2map
 
 all:	tmp
 
-tmp:	$(WNDIST_DIR)
+tmp:	$(WNDAT_EXT) $(WNDIST_EXT)
+	mkdir -p $(WNDAT_DIR)
+	/bin/bash $(DICT2MAP) $(WNDAT_SRC) $(WNDAT_DIR)
+	ls $(WNDAT_DIR)
+
+$(WNDAT_EXT):
+	mvn -Pwordnet-data-deps dependency:unpack
+
+$(WNDIST_EXT):	$(WNDIST_DIR)
+	mkdir -p $(WNDIST_EXT)
+	unzip $(WNDIST_ARCH) -d $(WNDIST_EXT) > /dev/null
 
 $(WNDIST_DIR):
 	mkdir -p $(WNDIST_DIR)
-	wget -O $(WNDIST_ARCH) https://sourceforge.net/projects/extjwnl/files/extjwnl-1.9.3.zip/download
-#	mvn -Pwordnet-data-deps dependency:unpack
+	wget -O $(WNDIST_ARCH) https://sourceforge.net/projects/extjwnl/files/extjwnl-$(WNDIST_VER).zip/download
 
 .PHONY:	compile
 compile:
