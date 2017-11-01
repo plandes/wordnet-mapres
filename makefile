@@ -60,7 +60,7 @@ install:	wndat
 	mvn -Plogging-deps install
 
 .PHONY:	site
-site:
+site:		wndat
 	mvn -Plogging-deps site
 
 .PHONY:	run

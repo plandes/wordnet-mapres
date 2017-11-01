@@ -10,15 +10,38 @@ WordNet data.
 
 In your `pom.xml` file add
 the
-[dependency XML element](https://plandes.github.io/wnmap/dependency-info.html) below:
+[dependency XML element](https://plandes.github.io/wordnet-mapres/dependency-info.html) below:
 ```xml
 <dependency>
     <groupId>com.zensols.nlp</groupId>
-    <artifactId>wnmap</artifactId>
+    <artifactId>wordnet-mapres</artifactId>
     <version>0.0.1</version>
 </dependency>
 ```
 
+
+## Usage
+
+Like any [extJWNL] dictionary, you resolve the dictionary using
+`Dictionary.getResourceInstance()`, but use the resource XML given in the
+library as such:
+
+```java
+Dictionary dict = Dictionary/getResourceInstance("/net/sf/extjwnl/data/wordnet/wn31/map/res_properties.xml");
+IndexWordSet wordSet = dict.lookupAllIndexWords("cat");
+Assert.assertNotNull(wordSet);
+IndexWord indexWord = wordSet.getIndexWord(POS.NOUN);
+System.out.println(indexWord)
+```
+
+See the [unit test] for a more in-depth example.
+
+
+## Documentation
+
+More [documentation](https://plandes.github.io/wordnet-mapres/):
+* [Javadoc](https://plandes.github.io/wordnet-mapres/apidocs/index.html)
+* [Dependencies](https://plandes.github.io/wordnet-mapres/dependencies.html)
 
 ## WordNet Data
 
@@ -30,13 +53,6 @@ The WordNet data comes from the latest [extJWNL] release:
     <version>1.2</version>
 </dependency>
 ```
-
-
-## Documentation
-
-More [documentation](https://plandes.github.io/wnmap/):
-* [Javadoc](https://plandes.github.io/wnmap/apidocs/index.html)
-* [Dependencies](https://plandes.github.io/wnmap/dependencies.html)
 
 
 ## Building
@@ -79,3 +95,4 @@ limitations under the License.
 [MapBackedDictionary]: http://extjwnl.sourceforge.net/javadocs/net/sf/extjwnl/dictionary/MapBackedDictionary.html
 [WordNet]: https://wordnet.princeton.edu
 [extJWNL]: http://extjwnl.sourceforge.net
+[unit test]: src/test/java/com/zensols/nlp/wnmap/princeton/file/PrincetonResourceObjectDictionaryFileTest.java
