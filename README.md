@@ -43,6 +43,20 @@ More [documentation](https://plandes.github.io/wordnet-mapres/):
 * [Javadoc](https://plandes.github.io/wordnet-mapres/apidocs/index.html)
 * [Dependencies](https://plandes.github.io/wordnet-mapres/dependencies.html)
 
+
+## Process
+
+The data file is built from the [WordNet] dependency data file (see [WordNet
+Data section](#wordnet-data)) by:
+1. Downloading by depndency definition
+2. Extracting the jar data files
+3. Adding XML dictionary *properties file*.
+4. Compiling and adding a Princeton object map backed dictionary
+   implementation.
+
+This is done with the `make wndat` command (see [build section](#building)).
+
+
 ## WordNet Data
 
 The WordNet data comes from the latest [extJWNL] release:
@@ -62,9 +76,7 @@ To build from source, do the folling:
 - Install [Maven](https://maven.apache.org)
 - Install [GNU make](https://www.gnu.org/software/make/) (optional)
 - Build the software: `make`
-- Build the distribution binaries: `make dist`
-
-Note that you can also build a single jar file with all the dependencies with: `make package`
+- Build the distribution binaries: `make package`
 
 
 ## Changelog

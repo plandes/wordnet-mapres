@@ -75,10 +75,6 @@ run:
 docs:
 	mvn javadoc:javadoc
 
-.PHONY:	dist
-dist:
-	mvn -Plogging-deps package appassembler:assemble
-
 .PHONY:	clean
 clean:
 	rm -fr $(TARG)
