@@ -1,6 +1,9 @@
 # Wordnet MapDictionary
 
-Includes an implementation of Wordnet MapDictionary and Data
+This is an implementation of a [WordNet] Resource based MapBackedDictionary and
+Data.  It is an extension of the [extJWNL] Java library.  The compiled jar not
+only has an instance of a [MapBackedDictionary] but a compiled version of the
+WordNet data.
 
 
 ## Obtaining
@@ -13,6 +16,18 @@ the
     <groupId>com.zensols.nlp</groupId>
     <artifactId>wnmap</artifactId>
     <version>0.0.1</version>
+</dependency>
+```
+
+
+## WordNet Data
+
+The WordNet data comes from the latest [extJWNL] release:
+```xml
+<dependency>
+    <groupId>net.sf.extjwnl</groupId>
+    <artifactId>extjwnl-data-wn31</artifactId>
+    <version>1.2</version>
 </dependency>
 ```
 
@@ -41,7 +56,6 @@ Note that you can also build a single jar file with all the dependencies with: `
 An extensive changelog is available [here](CHANGELOG.md).
 
 
-
 ## License
 
 Copyright © 2017 Paul Landes
@@ -59,3 +73,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
+<!-- links -->
+[MapBackedDictionary]: http://extjwnl.sourceforge.net/javadocs/net/sf/extjwnl/dictionary/MapBackedDictionary.html
+[WordNet]: https://wordnet.princeton.edu
+[extJWNL]: http://extjwnl.sourceforge.net

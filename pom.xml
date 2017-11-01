@@ -6,12 +6,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zensols.nlp</groupId>
-    <artifactId>wnmap</artifactId>
+    <artifactId>wordnet-mapres</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>Wordnet MapDictionary</name>
-    <description>Includes an implementation of Wordnet MapDictionary and Data</description>
-    <url>https://github.com/plandes/wnmap</url>
+    <name>Wordnet MapDictionary Resource</name>
+    <description>Includes an implementation of a Wordnet Resource based MapBackedDictionary and Data</description>
+    <url>https://github.com/plandes/wordnet-mapres</url>
 
     <licenses>
         <license>
@@ -22,9 +22,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/plandes/wnmap</url>
-	<connection>scm:git:git://github.com/plandes/wnmap.git</connection>
-	<developerConnection>scm:git:git@github.com:plandes/wnmap.git</developerConnection>
+        <url>https://github.com/plandes/wordnet-mapres</url>
+	<connection>scm:git:git://github.com/plandes/wordnet-mapres.git</connection>
+	<developerConnection>scm:git:git@github.com:plandes/wordnet-mapres.git</developerConnection>
     </scm>
 
     <developers>
