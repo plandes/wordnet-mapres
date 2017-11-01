@@ -63,6 +63,10 @@ install:	wndat
 site:		wndat
 	mvn -Plogging-deps site
 
+.PHONY:	deploy
+deploy:		package
+	mvn -Plogging-deps deploy
+
 .PHONY:	run
 run:
 	mvn -Plogging-deps compile exec:exec
