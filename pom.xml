@@ -296,27 +296,6 @@
                 </executions>
             </plugin>
 
-            <!-- create fat/uberjar -->
-	    <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-assembly-plugin</artifactId>
-		<version>2.2-beta-5</version>
-		<configuration>
-		    <descriptorRefs>
-			<descriptorRef>src</descriptorRef>
-		    </descriptorRefs>
-		</configuration>
-		<executions>
-		    <execution>
-			<id>make-assembly</id>
-			<phase>package</phase>
-			<goals>
-			    <goal>single</goal>
-			</goals>
-		    </execution>
-		</executions>
-	    </plugin>
-
 	    <!-- assemble application -->
 	    <plugin>
 		<groupId>org.codehaus.mojo</groupId>

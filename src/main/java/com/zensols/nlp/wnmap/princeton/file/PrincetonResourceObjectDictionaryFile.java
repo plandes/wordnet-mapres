@@ -27,6 +27,14 @@ import net.sf.extjwnl.util.factory.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * <code>ObjectDictionaryFile</code> that accesses files names with the
+ * Princeton dictionary file naming convention from resources.
+ *
+ * @author John Didion (jdidion@didion.net)
+ * @author <a href="http://autayeu.com/">Aliaksandr Autayeu</a>
+ * @author Paul Landes
+ */
 public class PrincetonResourceObjectDictionaryFile extends AbstractPrincetonRandomAccessDictionaryFile
     implements ObjectDictionaryFile, DictionaryFileFactory<PrincetonResourceObjectDictionaryFile> {
 
