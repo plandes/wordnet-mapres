@@ -49,7 +49,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.app.compiler.version>1.8</project.app.compiler.version>
         <log4j.version>2.7</log4j.version>
-        <project.classname>com.zensols.nlp.wnmap.HelloWorld</project.classname>
         <project.site.readme.dir>${basedir}/src/site/markdown</project.site.readme.dir>
         <project.wndat.dir>${project.build.directory}/wn/ext</project.wndat.dir>
     </properties>
@@ -69,6 +68,16 @@
             <groupId>net.sf.extjwnl</groupId>
             <artifactId>extjwnl</artifactId>
             <version>1.9.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- testing -->
@@ -86,17 +95,23 @@
             <dependencies>
                 <dependency>
                     <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>log4j-1.2-api</artifactId>
-                    <version>${log4j.version}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.logging.log4j</groupId>
                     <artifactId>log4j-slf4j-impl</artifactId>
                     <version>${log4j.version}</version>
                 </dependency>
                 <dependency>
                     <groupId>org.apache.logging.log4j</groupId>
                     <artifactId>log4j-jcl</artifactId>
+                    <version>${log4j.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>test-deps</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-1.2-api</artifactId>
                     <version>${log4j.version}</version>
                 </dependency>
             </dependencies>
@@ -136,11 +151,11 @@
             </plugin>
 
             <!-- javadoc -->
-	    <plugin>
+	    <!--plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.4</version>
-            </plugin>
+            </plugin-->
         </plugins>
     </reporting>
 
@@ -162,7 +177,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.17</version>
+                <version>2.20</version>
                 <configuration>
                     <useFile>false</useFile>
                     <systemPropertyVariables>
@@ -288,14 +303,8 @@
 		<version>2.2-beta-5</version>
 		<configuration>
 		    <descriptorRefs>
-			<descriptorRef>jar-with-dependencies</descriptorRef>
 			<descriptorRef>src</descriptorRef>
 		    </descriptorRefs>
-		    <archive>
-			<manifest>
-			    <mainClass>${project.classname}</mainClass>
-			</manifest>
-		    </archive>
 		</configuration>
 		<executions>
 		    <execution>
@@ -313,37 +322,7 @@
 		<groupId>org.codehaus.mojo</groupId>
 		<artifactId>appassembler-maven-plugin</artifactId>
 		<version>1.1.1</version>
-		<configuration>
-		    <programs>
-			<program>
-			    <mainClass>${project.classname}</mainClass>
-			    <name>${project.bin.name}</name>
-			</program>
-		    </programs>
-		</configuration>
 	    </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executable>java</executable>
-                    <arguments>
-                        <argument>-Dlog4j.configurationFile=file://${basedir}/src/main/resources/log4j2.xml</argument>
-                        <argument>-classpath</argument>
-                        <classpath/>
-                        <argument>${project.classname}</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 </project>

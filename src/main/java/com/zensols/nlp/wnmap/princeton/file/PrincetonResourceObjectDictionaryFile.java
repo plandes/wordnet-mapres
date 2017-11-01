@@ -1,4 +1,4 @@
-package com.zensols.extjwnl.princeton.file;
+package com.zensols.nlp.wnmap.princeton.file;
 
 import java.io.*;
 import java.nio.ByteBuffer;
