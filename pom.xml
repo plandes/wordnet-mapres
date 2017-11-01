@@ -9,8 +9,8 @@
     <artifactId>wordnet-mapres</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>Wordnet MapDictionary Resource</name>
-    <description>Includes an implementation of a Wordnet Resource based MapBackedDictionary and Data</description>
+    <name>WordNet MapDictionary Resource</name>
+    <description>Includes an implementation of a WordNet Resource based MapBackedDictionary and Data</description>
     <url>https://github.com/plandes/wordnet-mapres</url>
 
     <licenses>

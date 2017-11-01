@@ -1,4 +1,4 @@
-# Wordnet MapDictionary
+# WordNet MapDictionary
 
 This is an implementation of a [WordNet] Resource based MapBackedDictionary and
 Data.  It is an extension of the [extJWNL] Java library.  The compiled jar not
