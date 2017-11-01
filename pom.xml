@@ -151,11 +151,11 @@
             </plugin>
 
             <!-- javadoc -->
-	    <!--plugin>
+	    <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.4</version>
-            </plugin-->
+            </plugin>
         </plugins>
     </reporting>
 

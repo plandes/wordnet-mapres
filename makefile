@@ -55,6 +55,10 @@ test:		wndat
 package:	wndat
 	mvn -Plogging-deps package
 
+.PHONY:	install
+install:	wndat
+	mvn -Plogging-deps install
+
 .PHONY:	site
 site:
 	mvn -Plogging-deps site
