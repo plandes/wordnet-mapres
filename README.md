@@ -27,7 +27,7 @@ Like any [extJWNL] dictionary, you resolve the dictionary using
 library as such:
 
 ```java
-Dictionary dict = Dictionary/getResourceInstance("/net/sf/extjwnl/data/wordnet/wn31/map/res_properties.xml");
+Dictionary dict = Dictionary.getResourceInstance("/net/sf/extjwnl/data/wordnet/wn31/map/res_properties.xml");
 IndexWordSet wordSet = dict.lookupAllIndexWords("cat");
 Assert.assertNotNull(wordSet);
 IndexWord indexWord = wordSet.getIndexWord(POS.NOUN);
