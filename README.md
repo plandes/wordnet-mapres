@@ -5,23 +5,11 @@ Data.  It is an extension of the [extJWNL] Java library.  The compiled jar not
 only has an instance of a [MapBackedDictionary] but a compiled version of the
 WordNet data.
 
+
+## Deprecated
+
 **Important:** This repo is deprecated and moved to the [extjwnl map] project.
-
-
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-## Table of Contents
-
-- [Obtaining](#obtaining)
-- [Usage](#usage)
-- [Documentation](#documentation)
-- [Process](#process)
-- [WordNet Data](#wordnet-data)
-- [Building](#building)
-- [Changelog](#changelog)
-- [License](#license)
-
-<!-- markdown-toc end -->
-
+Please use that library instead of this one.
 
 
 ## Obtaining
