@@ -5,6 +5,24 @@ Data.  It is an extension of the [extJWNL] Java library.  The compiled jar not
 only has an instance of a [MapBackedDictionary] but a compiled version of the
 WordNet data.
 
+**Important:** This repo is deprecated and moved to the [extjwnl map] project.
+
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+## Table of Contents
+
+- [Obtaining](#obtaining)
+- [Usage](#usage)
+- [Documentation](#documentation)
+- [Process](#process)
+- [WordNet Data](#wordnet-data)
+- [Building](#building)
+- [Changelog](#changelog)
+- [License](#license)
+
+<!-- markdown-toc end -->
+
+
 
 ## Obtaining
 
@@ -108,3 +126,4 @@ limitations under the License.
 [WordNet]: https://wordnet.princeton.edu
 [extJWNL]: http://extjwnl.sourceforge.net
 [unit test]: src/test/java/com/zensols/nlp/wnmap/princeton/file/PrincetonResourceObjectDictionaryFileTest.java
+[extjwnl map]: https://github.com/extjwnl/extjwnl-data-wn31-map/
